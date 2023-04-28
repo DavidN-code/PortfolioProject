@@ -611,3 +611,79 @@ addEventListener('keyup', ({ key }) => {
             break
     }
 })
+
+
+var jokeDiv = document.querySelector('#jokes')
+// var currentJoke = ''
+
+// function getJoke(element){
+//     currentJoke = element.value
+// }
+
+function makeJoke(data) {
+    var res = `<div class ="joke">
+                    <h3>${data.setup}<h3>
+                    <h3>${data.punchline}</h3>
+                </div>`
+    return res
+}
+
+async function search() {
+    var response = await fetch("https://official-joke-api.appspot.com/random_joke")
+    var coderData = await response.json();
+    jokeDiv.innerHTML = makeJoke(coderData)
+}
+
+function over1(elem){
+    elem.style.backgroundColor = "skyblue"
+}
+
+function out1(elem){
+    elem.style.backgroundColor = "orange"
+    elem.innerHTML = ":-)"
+}
+
+function over2(elem){
+    elem.style.backgroundColor = "green"
+}
+
+function out2(elem){
+    elem.style.backgroundColor = "red"
+    elem.innerHTML = ":-)"
+
+}
+
+function over3(elem){
+    elem.style.backgroundColor = "yellow"
+}
+
+function out3(elem){
+    elem.style.backgroundColor = "blue"
+    elem.innerHTML = ":-)"
+
+}
+
+function over4(elem){
+    elem.style.backgroundColor = "orange"
+}
+
+function out4(elem){
+    elem.style.backgroundColor = "yellow"
+    elem.innerHTML = ":-)"
+
+}
+
+function over5(elem){
+    elem.style.backgroundColor = "red"
+}
+
+function out5(elem){
+    elem.style.backgroundColor = "green"
+    elem.innerHTML = ":-)"
+
+}
+
+// var el = document.getElementById('pm')
+function clicked(elem){
+        elem.src = 'pacm2.gif'  
+}
